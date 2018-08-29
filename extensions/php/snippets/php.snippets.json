@@ -248,5 +248,30 @@
 			"#endregion"
 		],
 		"description": "Folding Region End"
-	}
+	},
+    "Request check": {
+        "prefix": "request",
+        "body": [
+            "if ($$_SERVER[\"REQUEST_METHOD\"] == \"POST\") {",
+            "\t$0",
+            "} else {",
+            "\theader(\"location:index.php\");",
+            "}"
+        ],
+        "description": "Checking POST Request Method"
+    },
+    "Fetch row": {
+        "prefix": "f_row",
+        "body": [
+            "fetch_array(MYSQLI_ASSOC)"
+        ],
+        "description": "Fetching row in associative array"
+    },
+    "Fetch result": {
+        "prefix": "f_res",
+        "body": [
+            "fetch_all(true)"
+        ],
+        "description": "Fetching result in associative array"
+    }
 }
